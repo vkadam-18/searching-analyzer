@@ -1,4 +1,4 @@
-# searching-analyzer
+# Searching-analyzer
 Searching Analyzer is an interactive web-based tool built using HTML, CSS, and JavaScript that helps users understand and compare three fundamental searching algorithms — Linear Search, Binary Search, and Ternary Search. The project not only demonstrates how these algorithms work step-by-step but also provides a brief description of each to aid learning and comprehension.
 
 Features:<br>
@@ -7,19 +7,17 @@ Visual Demonstration of:
 2. Binary Search<br>
 3. Ternary Search<br>
 
-🧠 Algorithm Description Section explaining:<ul>
+Algorithm Description Section explaining:<ul>
 The logic behind each algorithm<br>
 Their respective time complexities (Best, Average, Worst)<br>
 Use-cases and scenarios for practical application</ul><br>
 
-Technologies Used: <br>
-<ul>
+Technologies Used: <br><ul>
 HTML – Structure of the interface<br>
 CSS – Styling for a clean and responsive UI<br>
 JavaScript – Implementation of the searching logic and DOM manipulation</ul><br>
 
 Learning Outcomes: <ul><br>
-
 This project is ideal for students and beginners to: <br>
 Understand how different search algorithms work.<br>
 Visually follow each step in the search process.<br>
