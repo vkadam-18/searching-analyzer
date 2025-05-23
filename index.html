@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Searching Visualizer</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html"><button type="button"
+                class="btn btn-outline-light">Home</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="linear.html"><button type="button"
+                class="btn btn-outline-light">Linear Search</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="binary.html"><button type="button"
+                class="btn btn-outline-light">Binary Search</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="ternary.html"><button type="button"
+                class="btn btn-outline-light">Ternary Search</button></a>
+          </li>
+          <li class="nav-item"></li>
+          <a class="nav-link active" aria-current="page" href="notations.html"><button type="button"
+              class="btn btn-outline-light">Notations</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Searching Techniques Section -->
+  <div class="container text-center">
+    <h2 class="text-light mb-4">Understanding Searching Techniques</h2>
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card h-auto bg-dark text-white">
+          <div class="card-body">
+            <h3 class="card-title">Applications</h3>
+            <ul>
+              <li>Databases and file systems use searching algorithms to retrieve records efficiently.</li>
+              <li>Binary search is applied in search engines and large sorted datasets.</li>
+              <li>Linear search is used in smaller, unsorted datasets where a quick lookup is required.</li>
+              <li>Information retrieval systems rely on effective search methods to provide relevant results.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 mb-1">
+        <div class="card h-auto bg-dark text-white">
+          <div class="card-body">
+            <h3 class="card-title">Use Case Scenarios</h3>
+            <ul>
+              <li>Binary search is used in phone books, dictionaries, and sorted lists of product IDs.</li>
+              <li>Linear search is used in unsorted data such as arrays or lists of names.</li>
+              <li>Ternary search is applicable in mathematical algorithms and optimizations.</li>
+              <li>Searching plays a key role in competitive programming to solve search-related problems efficiently.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 mb-1">
+        <div class="card  h-auto bg-dark text-white">
+          <div class="card-body">
+            <h3 class="card-title">Characteristics</h3>
+            <ul>
+              <li>Target Element/Key: The specific value or item you want to find in the data.</li>
+              <li>Search Space: The entire dataset where you're searching for the target element.</li>
+              <li>Complexity: The time and space requirements of the search process, based on the algorithm and data
+                structure.</li>
+              <li>Deterministic vs. Non-deterministic: having fixed approach, while other may scan the whole dataset.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="https://www.scholarhat.com/tutorial/datastructures/searching-in-data-structures"
+      class="btn btn-primary mt-3" role="button">Explore Search Techniques</a>
+
+  </div>
+
+  <!-- Cards Section for Searching Algorithms -->
+  <div class="container text-center second-item mt-5">
+    <div class="row">
+      <div class="col-12 col-md-4 align-self-start">
+        <a href="linear.html" class="text-decoration-none">
+          <div class="card second-item-each bg-dark text-white">
+            <div class="image">
+              <img src="./images/linear.jpeg" alt="Linear Search" class="img-fluid">
+            </div>
+            <div class="content">
+              <h3 class="heading_card">Linear Search</h3>
+              <ul>
+                <li>Search each element in sequence.</li>
+                <li>Doesn't require sorted data.</li>
+                <li>Best for small datasets.</li>
+                <li>Time Complexity: O(n).</li>
+                <li>Space Complexity: O(1).</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+      
+  
+      <div class="col-12 col-md-4 align-self-center">
+        <a href="binary.html" class="text-decoration-none">
+          <div class="card second-item-each bg-dark text-white">
+            <div class="image">
+              <img src="./images/binary.jpeg" alt="Binary Search" class="img-fluid">
+            </div>
+            <div class="content">
+              <h3 class="heading_card">Binary Search</h3>
+              <ul>
+                <li>Searches in a sorted array by dividing the search interval in half.</li>
+                <li>Each comparison eliminates half of the remaining data.</li>
+                <li>Time Complexity: O(log n).</li>
+                <li>Space Complexity: O(1).</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>
+      
+  
+      <div class="col-12 col-md-4 align-self-end">
+        <a href="ternary.html" class="text-decoration-none">
+          <div class="card second-item-each bg-dark text-white">
+            <div class="image">
+              <img src="./images/ternary.jpeg" alt="Ternary Search" class="img-fluid">
+            </div>
+            <div class="content">
+              <h3 class="heading_card">Ternary Search</h3>
+              <ul>
+                <li>Divides the array into three parts.</li>
+                <li>Reduces search space by two-thirds.</li>
+                <li>Less efficient than binary search in practice.</li>
+                <li>Time Complexity: O(log n base 3).</li>
+                <li>Space Complexity: O(1).</li>
+              </ul>
+            </div>
+          </div>
+        </a>
+      </div>      
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

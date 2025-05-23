@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Searching Visulizer</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="./css/algorithms.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html"><button type="button" class="btn btn-outline-light">Home</button></a>
+                </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="linear.html"><button type="button" class="btn btn-outline-light">Linear Search</button></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="binary.html"><button type="button" class="btn btn-outline-light">Binary Search</button></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="ternary.html"><button type="button" class="btn btn-outline-light">Ternery Search</button></a>
+            </li>
+            <li class="nav-item"></li>
+              <a class="nav-link active" aria-current="page" href="notations.html"><button type="button" class="btn btn-outline-light">Notations</button></a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+
+      <br />
+      <p class="header">Binary Search</p>
+   
+      <div id="array"></div>
+      <br /><br />
+   
+      <div style="text-align: center">
+        <label for="fname" class="number-array"> 
+          Number to be Searched:
+        </label>
+        <input type="text" id="fname" name="fname" />
+        <br /><br />
+        <button id="btn"  class="btn btn-outline-success"
+                onclick="BinarySearch()">Search</button>
+        <br />
+        <br />
+        <div id="text"></div>
+      </div>
+
+      <main>
+        <section class="how-it-works">
+            <h3>How Binary Search Works:</h3>
+            <ol>
+                <li>Start with two pointers representing the start and end of the array.</li>
+                <li>Find the middle element of the array.</li>
+                <li>If the middle element is the target, return its index.</li>
+                <li>If the target is less than the middle element, repeat the process on the left sub-array.</li>
+                <li>If the target is greater, repeat on the right sub-array.</li>
+                <li>If the target is not found, return -1.</li>
+            </ol>
+        </section>
+
+        <section class="example">
+            <h3>Example:</h3>
+            <pre>
+Array: [2, 3, 4, 10, 40]
+Target: 10
+Steps:
+- Middle element is 4 (index 2).
+- Target is greater than 4, search in the right sub-array: [10, 40].
+- Middle element is 10 (index 3) - match found.
+            </pre>
+        </section>
+
+        <section class="time-complexity">
+          <h3>Time Complexity:</h3>
+          <ul>
+            <li><strong>Best Case:</strong> O(1) – When the target is found at the middle element.</li>
+            <li><strong>Average Case:</strong> O(log n) – When the target is located in the middle of the array after several splits.</li>
+            <li><strong>Worst Case:</strong> O(log n) – When the target is located at one of the extremes of the array or not found.</li>
+          </ul>
+        </section>
+        
+
+        <section class="advantages-disadvantages">
+            <h3>Advantages:</h3>
+            <ul>
+                <li>Efficient for large sorted datasets.</li>
+                <li>Time complexity is O(log n).</li>
+            </ul>
+
+            <h3>Disadvantages:</h3>
+            <ul>
+                <li>Only works on sorted arrays.</li>
+                <li>More complex to implement compared to linear search.</li>
+            </ul>
+        </section>
+    </main>
+  
+    <script src="./algorithms/binary.js"></script>
+      <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f; /* Dark background */
+    color: #ffffff; /* Light text */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #ffcc00; /* Bright title color */
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h3 {
+    margin: 20px 0 10px;
+    color: #ffcc00; /* Bright subheading color */
+}
+
+section {
+    margin-bottom: 30px;
+    background-color: #282a36; /* Darker background for sections */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+pre {
+    background-color: #44475a; /* Preformatted text background */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto; /* Responsive overflow for wide text */
+}
+
+ul {
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: #282a36; /* Dark footer background */
+    border-radius: 8px;
+}
+
+      </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>

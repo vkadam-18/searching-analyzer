@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search Visualization</title>
+    <style>
+        .block {
+            width: 30px;
+            background-color: #6b5b95;
+            display: inline-block;
+            margin: 0 2px;
+            text-align: center;
+            transform: scaleY(-1); /* Mirror the bars */
+        }
+        .block_id {
+            position: relative;
+            top: -20px;
+            color: white;
+            transform: scaleY(-1); /* Correct the label position since the bars are mirrored */
+        }
+        .block_weight {
+            position: relative;
+            top: 5px;
+            color: black;
+        }
+        #container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        /* Center the entire layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <label for="array_input">Enter an array (comma-separated):</label>
+    <input type="text" id="array_input" placeholder="e.g. 34, 65, 12, 45" />
+    <button onclick="generatearray()">Generate Array</button>
+</div>
+
+<div id="container"></div>
+
+<div>
+    <label for="fname">Search for element:</label>
+    <input type="number" id="fname" />
+    <button onclick="LinearSearch()">Start Linear Search</button>
+</div>
+
+<p id="text"></p>
+
+<script>
+var container = document.getElementById("container");
+
+function generatearray() {
+    container.innerHTML = "";  // Clear previous array
+    var userArray = document.getElementById("array_input").value.split(',').map(Number); // Get user input and convert to numbers
+    for (var i = 0; i < userArray.length; i++) {
+        var value = userArray[i];
+        
+        // Create block (bar)
+        var array_ele = document.createElement("div");
+        array_ele.classList.add("block");
+        array_ele.style.height = `${value * 3}px`; // Height of the bar
+        array_ele.style.transform = `translate(${i * 40}px) scaleY(-1)`; // Transform position and mirror
+        
+        // Create label for the number inside the bar (mirrored)
+        var array_ele_label = document.createElement("label");
+        array_ele_label.classList.add("block_id");
+        array_ele_label.innerText = value;
+
+        // Add the weight under the bar (non-mirrored)
+        var array_ele_weight = document.createElement("label");
+        array_ele_weight.classList.add("block_weight");
+        array_ele_weight.innerText = value;
+
+        array_ele.appendChild(array_ele_label);
+        container.appendChild(array_ele);
+        container.appendChild(array_ele_weight); // Add weight below the bar
+    }
+}
+
+async function LinearSearch(delay = 300) {
+    var blocks = document.querySelectorAll(".block");
+    var output = document.getElementById("text");
+    var num = document.getElementById("fname").value;
+
+    output.innerText = "";
+
+    var flag = 0;
+    for (var i = 0; i < blocks.length; i += 1) {
+        blocks[i].style.backgroundColor = "#FF4949"; // Highlight current block
+        await new Promise((resolve) =>
+            setTimeout(() => {
+                resolve();
+            }, delay)
+        );
+
+        var value = Number(blocks[i].childNodes[0].innerHTML);
+        if (value == num) {
+            flag = 1;
+            output.innerText = "Element Found";
+            blocks[i].style.backgroundColor = "#13CE66"; // Mark as found
+            break;
+        } else {
+            blocks[i].style.backgroundColor = "#FFBD69"; // Reset color if not found
+        }
+    }
+    if (flag == 0) {
+        output.innerText = "Element Not Found";
+    }
+}
+
+</script>
+
+</body>
+</html>
